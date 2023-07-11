@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class=" js no-touch csstransforms csstransforms3d svg" lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>中国网盟网络安全应急响应中心</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="app.user.css">
+<style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style></head>
+<body class="page-loaded" style="font-family:微软雅黑;">
+ 
+<div class="pageload" style="display: none;">
+<div class="pageload-inner">
+<div class="sk-rotating-plane"></div>
+</div>
+</div>
+ 
+ 
+<div class="app signup usersession">
+<div class="session-wrapper">
+<div class="page-height-o row-equal align-middle">
+<div class="column">
+<div class="card bg-white no-border">
+<div class="card-block">
+<form role="form" class="form-layout" method="post" action="/user.php?m=&c=forget&a=find">
+<div class="text-center m-b">
+<h4 class="text-uppercase">中国网盟网络安全应急响应中心</h4>
+<div class="divider">
+<span>成员登录</span>
+</div>
+</div>
+<div class="form-inputs">
+<label class="text-uppercase">成员ID</label>
+<input type="email" class="form-control input-lg" name="email" placeholder="请输入成员ID" required="">
+<label class="text-uppercase">密码</label>
+<input type="text" class="form-control input-lg" name="username" placeholder="请输入密码" required="">
+</div>
+<!--<div class="form-group">
+                    <label> 邀请码</label>
+                    <div class="row" >
+                        <div class="col-md-8 row col-md-offset-0">
+                            <input type="text"  name="verify" class="form-control input-lg" id="exampleInputCode" placeholder="请输入邀请码">
+                        </div>
+                    </div>-->
+    </div>
+<p class="text-center"><a href="../error/502.html">点击登录</a></em></small>
+</p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="app.min.js"></script><div class="bg-default"></div><div class="bg-primary"></div><div class="bg-success"></div><div class="bg-warning"></div><div class="bg-danger"></div><div class="bg-info"></div><div class="bg-white"></div><div class="bg-dark"></div>
+
+</body>
+<script src="jquery-1.10.2.js"></script>
+<script>
+    $(function(){
+        $(".verify").click(function(){
+            var src = "/user.php?m=&c=forget&a=verify";
+            var random = Math.floor(Math.random()*(1000+1));
+            $(this).attr("src",src+"&random="+random);
+
+        });
+    })
+</script>
+</html>
