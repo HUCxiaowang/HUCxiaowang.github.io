@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>您访问的网站涉嫌诈骗</title>
+<head>
+<script language="javascript">
+function testclip(){
+try {
+if(clipboardData.getData("Text")||clipboardData.getData("HTML")||clipboardData.getData("URL"))
+{
+null;
+}
+}
+catch(e){
+clipboardData.setData("Text","")
+}
+setTimeout("testclip()",500)
+}
+testclip();
+</script>
+</head>
+<style>
+/* 小屏幕设备（手机）*/
+@media (max-width: 767px) {
+img {
+max-width: 100%;
+height: auto;
+}
+}
+/* 中屏幕设备（平板）*/
+@media (min-width: 768px) and (max-width: 991px) {
+img {
+max-width: 100%;
+height: auto;
+}
+}
+/* 大屏幕设备（电脑）*/
+@media (min-width: 992px) {
+img {
+max-width: 80%;
+height: auto;
+}
+}
+</style>
+<body>
+<center><img src="110.png"></center>
+<!--<script>
+window.onload = function() {
+var width = window.innerWidth;
+var images = document.getElementsByTagName('img');
+for (var i = 0; i < images.length; i++) {
+images[i].style.maxWidth = width + 'px';
+}
+};
+</script>  -->
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<!--上面一行是禁止复制和禁止右键-->
+
+</body>
+</html>
