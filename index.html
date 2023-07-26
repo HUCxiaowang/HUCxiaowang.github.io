@@ -51,5 +51,42 @@ a:active {
 
     <audio src="https://v1.cdn-static.cn/2022/11/12/38079_lad7o7r6.mp3" autoplay="" loop="" preload="auto"></audio>
 <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<script>
+//按键触发 
+ 
+ document.onkeydown = function(){
+            //禁止 ctrl+u
+            if (event.ctrlKey && window.event.keyCode==85){
+                return false;
+            }
+            //禁止 F12
+            if (window.event && window.event.keyCode == 123) {
+                event.keyCode = 0;
+                event.returnValue = false;
+            }
+     }
+ 
+   //如果还要禁止其他键的话搜 window.event.keyCode的对照表
+ 
+ 
+//网站禁止右键
+        document.body.oncontextmenu = function() {
+            self.event.returnValue=false
+        };
+ 
+// 禁用右键菜单、复制、选择
+     $(document).bind("contextmenu copy selectstart", function() {
+            return false;
+     });
+ 
+</script> 
+<script>
+window.addEventListener('keydown', function (e) {
+    if(e.keyCode == 83 && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)){
+        e.preventDefault();
+    }
+})
+</script>
+
 </body>
 </html>
