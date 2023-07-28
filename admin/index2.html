@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+   <title>管理后台登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+<div class="main">
+    <div class="login">
+        <h1>管理后台登录</h1>
+        <div class="inset">
+            <!--start-main-->
+
+
+                <div>
+                    <h2>管理登录</h2>
+                    <span><label>用户名</label></span>
+                    <span><input id="user" type="text" class="textbox" ></span>
+                </div>
+                <div>
+                    <span><label>密码</label></span>
+                    <span><input id="pass" type="password" class="password"></span>
+                </div>
+                <div class="sign">
+                    <input id="submit" type="submit" value="登录" class="submit" />
+                </div>
+
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+
+<div class="copy-right">
+    <p>&copy; 2020-2050 中国网络安全联盟 All Rights Reserved</p>
+
+</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script>
+    $(function () {
+
+        $("#submit").click(function () {
+            var user=$("#user").val();
+            var pass=$("#pass").val();
+            if (!user||!pass){
+                swal("账号或密码不能为空","","warning");
+            }else{
+            $.ajax({
+                url : "/admin/index/login.html",
+                type : 'POST',
+                dataType : 'json',
+                data : {user:user,pass:pass}
+            })
+                .done(function (data) {
+                    if (data.status=='1'){
+                    swal("登录成功","正在进入后台","success");
+                    window.location.href="/admin/index/index.html";
+                    }else{
+                        swal("登录失败","账号或密码错误","warning");
+                    }
+                })
+               .fail(function () {
+                    swal("登录失败","服务器加载失败","error");
+                });
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>
