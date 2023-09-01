@@ -1,403 +1,1321 @@
-<html><head><title>502 Bad Getway</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">
-	* {
-		margin: 0;
-		padding: 0;
-	}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	html,
-	body {
-		height: 100%;
-		text-align: center;
-	}
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>中国网盟云计算-提供专业的云服务</title>
+	<meta name="keywords" content="中国网盟云计算-提供专业的云服务。">
+	<meta name="description" content="中国网盟云计算-提供专业的云服务。">
+	<link href="./logo.png" rel="icon" type="image/png">
 	
-	html {
-		font: 100%/1.5 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', STHeitiSC-Light, 'Microsoft YaHei', 微软雅黑, Arial, sans-serif;
-	}
+
+<link rel="stylesheet" type="text/css" href="./cncc-cloud_files/base.css">
+<link rel="stylesheet" type="text/css" href="./cncc-cloud_files/kynewfoot.css">
+<iframe height="0" width="0" src="javascript:&#39;&lt;script&gt;function i(a){new Image().src = a};i(&quot;https://cm.pos.baidu.com/pixel?dspid=6418041&amp;ext_data=200001139&quot;);i(&quot;https://cm.g.doubleclick.net/pixel?google_nid=ipy&amp;google_cm&amp;ext_data=200001139&quot;);i(&quot;https://cyes.youku.com/cm.gif?dspid=11112&amp;s=1&amp;ext_data=200001139&quot;);i(&quot;https://ckm.iqiyi.com/pixel?qiyi_nid=71000015&amp;qiyi_sc&amp;ext_data=200001139&quot;);i(&quot;https://ckm.aty.sohu.com/cm.gif?ver=1&amp;mid=10012&amp;ext_data=200001139&quot;);i(&quot;https://cm.l.qq.com/?dspid=10016&amp;dspuid=G1LIOs21cjIy&amp;gettuid=1&amp;ext_data=200001139&quot;);&lt;/script&gt;&#39;" name="_pycmifr" style="display: none; visibility: hidden;" src="./cncc-cloud_files/saved_resource.html"></iframe><script type="text/javascript" async="" src="./cncc-cloud_files/adv"></script><script type="text/javascript" async="" src="./cncc-cloud_files/presadv"></script><script async="" src="./cncc-cloud_files/a.js.下载"></script><script src="./cncc-cloud_files/hm.js.下载"></script><script src="./cncc-cloud_files/1.8.2.jquery.js.下载"></script>
+<script src="./cncc-cloud_files/common-header.js.下载"></script>
+<script src="./cncc-cloud_files/index-right-top.js.下载"></script>
+<script src="./cncc-cloud_files/gainet.core.js.下载"></script>
+<link rel="stylesheet" type="text/css" href="./cncc-cloud_files/auth.action">
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
 	
-	img {
-		max-width: 100%;
-		height: 100%;
+	if(($("#logindiv").children().length==5||$("#logindiv").children().length==6)&&false){
+		window.location.reload();
+	}else if(true){
+		setTimeout(function(){
+			$.ajax({
+				url:'https://www.kuaiyun.cn:443/pushlogininfo.action',
+				type:"post",
+				async:false,
+				dataType : "json",
+				beforeSend:function(){
+				},
+				success:function(data){
+					if(data!=null&&data!="null"){
+						var windUrl=document.location.href;
+						if(windUrl.indexOf("tologin?mode=r&")>0){
+							windUrl=windUrl.replace("mode=r&","");
+						}
+						window.location.href=windUrl;
+					}else{
+						if(false){
+							var a = "";
+							a += "<div class='state-log-in'>";
+							a += "<a id='h_username' href='#' class='user-id'>";
+							a += "<span class='user-name'>";
+							if(membersInfoMap.memberName==null || membersInfoMap.memberName=='' || membersInfoMap.memberName=='未填写'){
+								a += "";
+								a += "";
+							}else{
+								a += "";
+								a += "";
+							}
+							a += "</span>"; 
+							a += "<i class='triangle-down'></i>"; 
+							a += "</a>";
+							a += "<div id='h_logout_btn' class='nav-down-style nav-down-style-1' style='display:none;'>";
+							a += "<ul class='nav-down-menu'>";
+							a += "<li><a href='logout'>退出</a></li>";
+							a += "</ul></div></div>";
+							$(".login-op").empty().append(a);
+						}
+					}
+				},
+				error:function(){
+				}
+			})
+		},1000);
+	}else{
 	}
+});
+</script>
+
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="./cncc-cloud_files/kyhome.css">
+	<link rel="stylesheet" type="text/css" href="./cncc-cloud_files/privatecloud.css">
+</head>
+
+<body>
 	
-	.container {
-		width: 100%;
-		height: 100%;
-		position: relative;
-		min-height: 500px;
-	}
+	<!--头部导航start-->
 	
-	.aside-top {
-		width: 100%;
-		height: 25%;
-	}
+
+	<!-- 此处引用线上公共头部导航 start-->
 	
-	.err-img {
-		width: 100%;
-		height: 30%;
-	}
-	
-	.err-text {
-		width: 100%;
-		height: 20%;
-	}
-	
-	.err-ip-addr {
-		width: 100%;
-		font-size: 1em;
-		color: #585858;
-		text-align: center;
-		border-top: solid 1px #11CD6E;
-	}
-	.err-request-id {
-		width: 100%;
-		font-size: 1em;
-		color: #585858;
-		text-align: center;
-	}
-	
-	.img-aside-lt {
-		width: 30%;
-		height: 100%;
-		float: left;
-	}
-	
-	.items {
-		width: 40%;
-		height: 100%;
-		float: left;
-	}
-	
-	.img-aside-rt {
-		width: 30%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-1 {
-		width: 20%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-2 {
-		width: 20%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-3 {
-		width: 20%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-4 {
-		width: 20%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-5 {
-		width: 20%;
-		height: 100%;
-		float: left;
-	}
-	
-	.item-img {
-		height: 95px;
-	}
-	
-	.run-localtion {
-		font-size: 1.2em;
-		line-height: 2;
-		margin-top: 10%;
-		color: #585858;
-		white-space: nowrap;
-	}
-	
-	.run-status {
-		font-size: 12px;
-		line-height: 1;
-		color: #11CD6E;
-		white-space: nowrap;
-	}
-	
-	.text-aside-lt {
-		width: 35%;
-		height: 100%;
-		float: left;
-	}
-	
-	.err-text-container {
-		width: 30%;
-		height: 100%;
-		font-style: italic;
-		float: left;
-	}
-	
-	.text-aside-rt {
-		width: 35%;
-		height: 100%;
-		float: left;
-	}
-	
-	#err_code {
-		width: 50%;
-		font-size: 7em;
-		font-weight: bold;
-		color: #E5493A;
-		text-align: right;
-	}
-	
-	#status_text {
-		width: 50%;
-		margin-left: 5%;
-		font-size: 2em;
-		color: #585858;
-		white-space: nowrap;
-	}
-	
-	.img-aside-top {
-		height: 10%;
-	}
-	
-	#ip_addr {
-		margin-right: 2%;
-	}
-	
-	#items-phone {
-		display: none;
-	}
-	
-	@media screen and (min-width:992px) and (max-width:1366px) {
-		.img-aside-lt {
-			width: 20%;
-		}
-		.items {
-			width: 60%;
-		}
-		.img-aside-rt {
-			width: 20%;
-		}
-		.text-aside-lt,
-		.text-aside-rt {
-			display: none;
-		}
-		.err-text-container {
-			width: 100%;
-		}
-		#err_code {
-			width: 20%;
-			font-size: 5em;
-		}
-		#status_text {
-			font-size: 1.4em;
-			margin-left: 2%;
-		}
-	}
-	
-	@media screen and (min-width:769px) and (max-width:991px) {
-		.img-aside-lt {
-			width: 15%;
-		}
-		.items {
-			width: 70%;
-		}
-		.img-aside-rt {
-			width: 15%;
-		}
-		.text-aside-lt,
-		.text-aside-rt {
-			display: none;
-		}
-		.err-text-container {
-			width: 100%;
-		}
-		#err_code {
-			width: 20%;
-			font-size: 5em;
-		}
-		#status_text {
-			font-size: 1.4em;
-			margin-left: 2%;
-		}
-	}
-	
-	@media screen and (min-width:520px) and (max-width:768px) {
-		.img-aside-lt {
-			display: none;
-		}
-		.items {
-			width: 100%;
-		}
-		.img-aside-rt {
-			display: none;
-		}
-		.text-aside-lt {
-			display: none;
-		}
-		.err-text-container {
-			width: 100%;
-		}
-		.text-aside-rt {
-			display: none;
-		}
-		#err_code {
-			width: 20%;
-			font-size: 5em;
-		}
-		#status_text {
-			font-size: 1.4em;
-			margin-left: 2%;
-		}
-	}
-	
-	@media screen and (min-width:360px) and (max-width:519px) {
-		.img-aside-lt {
-			width: 20%;
-		}
-		.items {
-			width: 60%;
-		}
-		.img-aside-rt {
-			width: 20%;
-		}
-		.run-localtion {
-			font-size: 12px;
-		}
-		.run-status {
-			font-size: 8px;
-		}
-		.text-aside-lt {
-			display: none;
-		}
-		.err-text-container {
-			width: 100%;
-		}
-		.text-aside-rt {
-			display: none;
-		}
-		#err_code {
-			width: 20%;
-			font-size: 3em;
-		}
-		#status_text {
-			font-size: 1em;
-			margin-left: 2%;
-		}
-		.err-ip-addr {
-			font-size: 10px;
-		}
-		.item-img {
-			height: 30px;
-		}
-	}
-	
-	@media screen and (max-width:359px) {
-		.img-aside-lt {
-			width: 20%;
-		}
-		.items {
-			width: 60%;
-		}
-		.img-aside-rt {
-			width: 20%;
-		}
-		.run-localtion {
-			font-size: 10px;
-		}
-		.run-status {
-			font-size: 8px;
-		}
-		.text-aside-lt {
-			display: none;
-		}
-		.err-text-container {
-			width: 100%;
-		}
-		.text-aside-rt {
-			display: none;
-		}
-		#err_code {
-			width: 20%;
-			font-size: 2em;
-		}
-		#status_text {
-			font-size: 10px;
-			margin-left: 2%;
-		}
-		.err-ip-addr {
-			font-size: 8px;
-		}
-		.err-request-id {
-			font-size: 8px;
-		}
-		.item-img {
-			height: 30px;
-		}
-	}
-</style>
-</head><body><div class="container">
-	<div class="aside-top"></div>
-	<div class="err-img">
-		<div class="img-aside-lt"></div>
-		<div class="items">
-			<div class="item-1">
-				<div class="item-img">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABfCAYAAAAXtMJAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkI3MEUxOTE1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkI3MEUxOTA1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0MmFhYTVjLWRmNTktMjM0MC05MzAzLTZjNDdhNWMxMTYzYiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz786Y5iAAALMElEQVR42uxdC5RWVRU+MwOMBDo6g2GgNWajqOkgZBEY2EpF0cxHmeFoWC3SEFhmkWmxdBVZxEo0H2FFaompEWaOKInYosgUpiBqLB+NSI4ThMVYjMMM0/66323u3Pn/+zzn3v9x91rf+mf++/jP3fucffbeZ599K/r6+lRG6VGFUwC1LfMzjig1QnCIYIJgmqBRMEowWnCQz7U9gpcErYIfCdbsmnDTa5kA/OkAwamCiYLTBSdouu8LgoUihBWZAAYTevUUwccE7xIcYfC3mgVNIoh/ZgJQ6v3s5ZdQ1SRFvxKc7VZJQ8qkt+8vOF8wW/DelNpwkmC54NxyGQH7CcaT4ZcJjtR4b6iSDsEOQS+/AyPrBEcJhnlce56MglXFPAIwYR4uOJqWyVjq72oeHymooQDGafrNdsGTRJvgOcFOQafrvGq2BZjJ3l7tOuc6wapiGgH1ghNpFk4g49+SUOd5SLBS8KBgt9/J0rMH/C/8xAi8gXOOk06Tc39RyCOgQfAJWicncGgnSTAbr6FNH5mEyb+XjzNEEIvl8/OOQx8R/E8AlQXE9BpaJqsFmwVXC05Jgfm2KjlY181EEAs4mmxqFKFUFooAoE4WCZ4R3MXhOjzlNp3P9myi5aSDT59xqDFM1IelLYDhHOab+dlQgKoQc84ywdOCD8UcBX/jXGKP9tFpCuBi9rBFOoe6QZpI5q1ibCgqPeL2wZIWQK3g+4K7BccWoQl8jmC9YG7E67cJ9jlUb6ICOEuwkdZNsXvVN3NE1Ia89nVBF/8elaQA4GD8nA5UqRDmhLWcJ4IS+F3Bv19MSgBLBEtVaRIcrXUILwQ8f5/j784kBHC74CpV2nQAveXLApw7hiES0BumBXBbwEaVCt0uztUXfM45hioIQbx2kwJAUORyVX70dRHCAo/jkxz6f4cpAaAXzFPlS98QIcweZH+3zD9QWcueoGfFMes1IYAZ6AUhzn+tRIWwTBh+juu76ap/Uf8PTrNIFx1KBysIvSJYKPhzCY+Ee0QIzsX9S/mJnv9L+0ud6wFPKGu9NYhldKPg0/QPSnlZtE31LxZ10InbIuqncUA8QgNdFYD5WMa7SPCY4P4QtnMxUz19oDYyH7TaeYIOAWDZ73qfc37GIQjnAyHeRs0Puo1WxfPKWkTpodMDd/8dVI9vjhA60EGIG+11/L9CtwAw6Y7wOP5NAUyz4Zx8dK3TtggeFWygTn3d5/wGToSTBRcIqhIUwlB+rhf1s0WnAM5S+ePk3YJPCX7IHriOvTEuPUKhPqX6A1tB6DniFsFXqQ7nOlSDaepmWGYAxbWCvpzn++00ScH80dT7cZmP9VVkGZyprOyErhj3+pPgWo6G5gQFsFWnAJoE787xPdTM+5QVKRzOHntMzMajxyO/50HNTNnKUbwwAQGMzOWgxhHAZ3N8t5HeXhv1Hhg2IWbDr+Qc0mWQOV+hWWyaZoqpX6dDAOg17gxi6PiTae+C7hCcFrPBTSq5UPYdFLZJOpjPFFsAc3OYmRDKv/n/FwWzNKidexI2GZe6zUQDFFsAx6r+oJKiU4W4x3/4Pxysr8Vs5ONUO2nQHMGrBu8/UdTQ5DgCQM5jhaPnf9TllC3XYC2kGU2Fx77Y4P0rlCNDOqwA4HBdzL9XusIJmOV/qqyclziErT2tKYcQblVWwNAUTYuaGTdVWRldDws+rAaucSLIdrSGxi0rgBhONzuTKTrRjgiEFQAm3/uUa5OBspYemzQ0DDk3T6vCoPsN3398WAFgQfnXgguVFexyxliWaGpUsyocelZZewBM0SRRQ9VhBIDE0kWu7+Bs3au8g3Fh6HcFJABEVzcbvD/C94eHEUCuaCNiQRM1NaiPHnQhkcn2IDw+Nk4oAnGgazU2qN3wkI9CuwzeG+vDx0UNR0Nw31N615Shxn7M+aWqAJgPS+g4g/eH+j4yqgCuMdC4GpeHXQ40KkoPxu6Oq1VGOmhMFAEs1mj1lDvVhBUAVqPOzvimjXrDCABZvUsznumlMAK4QulZVM8oggDqaPlklJIAFij/alEZhadhQQRwBNVPRvqpI4gAEG54U8YrI7RzSIDePzPhRiHqWqH6lz0jm3jK2r9VkVC79ygrfFGVR9UjrrSTfwNYzHrKTwBI06hO6AGwBIj6bds1CgAOY00Cbe8jc3vyzKt4lk5H57IFsGeIj+XTlGDPx5ryM+xJRUnuekFxraArE+o9NkFdHJ+ZoRYhp/OTKbSnIROARdDFh6TQnimZACyanVJ7TlWFVcUrFQEgDfw9KbUHZu/0chfAhSm36aJyEoB7myp2c7empP9tgjODIqsvpcybtypra1Wv5vvCr3pFTFZsKBy0R+wkH+ZDWqh9hm1HQw09OKrOLkzJCrMJ1ayw36Gez6yT4CnPUtaOzkEq6FKfi//OidL0DndU1ZqREvMR98K2qreTP1WaAY951aA5QNTPKOWflbBGWSl7dyXAiG+rdNaekfs63uD9vyvqZ3euSRjrvX5bNm/jJzKh2w0zAj1wRcLMv1NZO31M0W4HDwcJ4BSfi7Eh2s5cxlakxQkwBAkAP0jgdzAxIh3944Z/5wHp/dsHCUDUD4b6VJ+LUW7SuR8AlQM3J8CcWVR9YwzdH/Wpsen7XMPPAWvqlnx+QCPNrnyEicOdOg5hfClBD/lJwQc03hNWHIqMrDes8236Dot55xTAZJ+LUZOhI8f32CmzMiEhIFD3OCfJuBnZTVSp2NewXwJtR2Gq63IdsP2AaT43+InHsQUMH4xMSBAXcKJEfaK76TjCMuvxuKaONj1MW2wqTLpq7/XS+3NmflcctGkeHB8UkRub52I4Xkep/j3Auehy9+yeIMFR+q2yXhnVwXZ20qGsIuPB8LRymp4Q5udVnRgB45R3jf61Psy3zdLzAlhSRsIpyqpGOKkAQz3oHJ4ZJZgD3umjB38T8McuoaeckUMzSO9v9RNAvcdxWDpbAv5YO4WQEZ06Yb7vllsI4FCf2M8LIX70sQRN00KmTSpg4VoI4ECP49vymJ9ehJ2Uy8qY+aiXdKb0/q6gAqjzUUFRaK4qrD2/SRE0Bl5XGLjTVvow+fmIDdnLOM5DZcT8vyjr/WBtYS6y491eZmpU2ken59EyYf50YX7o2BgE4FXu8W0xG9ZFr/VbJcz8ZvogbVEurvSZZHW8zwtRQAS9EOrtLjHmY9EIxaoiFyGHAP7qcbxB6ctWQ9wGa84bSoDxSCTG8i0KS/XEuREEsNHjONYJdObpIPl2Kq2kF4uU+agShujxnTpuBgGgBM3LHudAyjozIOyFiXuLjPFYDZxBlaMtZaZSZm68TOY+HzW0ROODYMJCeLtY3h4NywZvQkXG4GrdN7fNzKV0nUd4jALQ59TASuBBCann0/gbZ+Q4jlLCKHOMsDFqUe+fMtPxjKhdhIT/ByI+cyD6f2Zcbcv8OSrHmmWOYXgzbft/+JwLE/Z46nz4A4fliZmgQgqK5O1xXIfzT1bWEuSwhO35tdTvG8NGAqJs0HCnJkIAcwJcBx3Yws+dNMOwAIKwdr2yFnegunK9qPMNChC5RSht7JV5hlA56hIhZWYKwya6XjoB5iJNBOu0eMsfor5Y2OmMesMoAnA/zBWcJOcF6N1hnTT0qHVk/B8DXrOVWE61hKqMKAyOJALsW0YKISpPVfP/oa7J/lUeQy3QHUQnGY3Rh6XMXWnquly9CZMjXrd9A3tgVOqmHm3mA6+J2dZOqkB3VUVbALWca3r5XDi/3SGAfxXiDJ9vOD9MXfhBZaWLI0ttnMf5CDlso4PSSoZvoHu+1/Az2KtwLxejUzFgDsgoefqvAAMApqJvE2XfHqAAAAAASUVORK5CYII=" alt="">
+
+	<div class="">
+		<div class="ky-nav " style="z-index:999" id="navigate_bar">
+			<div class="ky-container">
+				<div class="ky-nav-logo">
+					<a href=""><img src="./cncc-cloud_files/logo.png" width="190" height="42" alt="中国网盟云计算-提供专业的云服务"></a>
 				</div>
-				<div class="img-desc">
-					<div class="run-localtion">浏览器</div>
-					<div class="run-status">工作中</div>
+				<div class="ky-nav-menu">
+					<div data-spm="2">
+						<div class="ky-header">
+							<div class="ky-header-inner clearfix">
+							<!-- 导航菜单 -->
+								<ul class="menu item pull-left" id="J_common_header_menu" data-spm="201">
+									<li class="top-menu-item" has-dropdown="false" menu-type="">
+										<a class="menu-hd top-menu-item-link" href="">首页</a>
+									</li>
+									
+															<li class="top-menu-item" has-dropdown="true" menu-type="product">
+										<span class="menu-hd">产品</span>
+										<div class="menu-dropdown clearfix">
+											<div class="menu-dropdown-inner">
+												<div class="menu-dropdown-sidebar sidebar0 pull-left" style="box-sizing: border-box;height: 660px">
+													<a class="clearfix active" href="#" sidebar-type="cloud">
+														基础云产品
+														<span class="icon pull-right"></span>
+													</a>
+													<a class="clearfix mtop8" href="#" sidebar-type="MapReduce">
+														多云产品
+														<span class="icon pull-right"></span>
+													</a>
+													<a class="clearfix mtop8" href="#" sidebar-type="cloudsecurity">
+														云安全产品
+														<span class="icon pull-right"></span>
+													</a>
+													<a class="clearfix mtop8" href="#" sidebar-type="programcloudproducts">
+														方案云产品
+														<span class="icon pull-right"></span>
+													</a>
+													<a class="clearfix mtop8" href="#" sidebar-type="onestopsolution">
+														一站式方案
+														<span class="icon pull-right"></span>
+													</a>
+
+													
+													<a class="clearfix mtop8" href="#" sidebar-type="popularapplications">
+														热门应用
+														<span class="icon pull-right"></span>
+													</a>
+													
+													<a class="clearfix mtop8" href="#" sidebar-type="domain">
+														域名主机
+														<span class="icon pull-right"></span>
+													</a>
+													<a class="clearfix mtop8" href="#" sidebar-type="icp">
+														企业应用服务
+														<span class="icon pull-right"></span>
+													</a>
+													</div>
+												<div class="menu-dropdown-content">
+													<div class="search-bar">
+														<input type="text" value="" placeholder="请输入您想了解的产品名称" class="search-input" onFocus="naventeranwer(this.value)" onpaste="searchnavproduct(this.value)" onKeyUp="searchnavproduct(this.value)" onBlur="searchnavproductonblur()">
+														<button class="searchbtn"></button>
+														<div style="display:none;">
+															<ul class="search-result" id="navproductul"> 
+															</ul>
+														</div>
+													</div>
+													
+													<!-- 下拉右侧内容 -->
+													<!-- 基础云产品-->
+													<div style="display: block;" class="item-sub item-sub0  nav-bg-fuwuqi tpl1 product-bg-common clearfix" sidebar-type="cloud">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n1"></span>中国网盟云计算服务器
+																	<p class="fsize12 g777 mtop6">全SSD固态磁盘三副本存储，处理弹性伸缩，安全稳定的计算服务。</p>
+																</a>
+																
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n2"></span>中国网盟云计算VPS
+																	<p class="fsize12 g777 mtop6">郑州节点，多线骨干网接入，配合专用云数据库，站库分离，访问速度提高40%以上。</p>
+																</a>
+																
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n4"></span>MySQL数据库
+																	<p class="fsize12 g777 mtop6">省时，省心，速度快。</p>
+																</a>
+																
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n5"></span>Redis数据库
+																	<p class="fsize12 g777 mtop6">分布式缓存数据库服务。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n32"></span>MongoDB数据库
+																	<p class="fsize12 g777 mtop6">高性能文档数据库服务。</p>
+																</a>
+																
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n6"></span>对象存储
+																<p class="fsize12 g777 mtop6">按使用量付费，方便专业，简单易用的云存储服务。</p>
+																</a>
+															</div>
+															
+														</div>
+													</div>
+
+													<!-- 多云产品分析 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-vps tpl1 product-bg-common clearfix" sidebar-type="MapReduce">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" target="_blank" class="nav-link">
+																	<span class="nav-icon icon-n38"></span>阿里云产品
+																	<p class="fsize12 g777 mtop6">中国网盟云计算携手阿里云为您提供一站式上云服务。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n37"></span>腾讯云产品
+																	<p class="fsize12 g777 mtop6">丰厚折扣，专业技术支持，关联腾讯云账号获取优惠。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" target="_blank" class="nav-link">
+																	<span class="nav-icon icon-n37 nav-link-huawei"></span>华为云产品
+																	<p class="fsize12 g777 mtop6">丰厚折扣，专业技术支持，关联华为云账号获取优惠。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n43"></span>京东云
+																	<p class="fsize12 g777 mtop6">稳定安全可靠的弹性计算服务，帮助您更高效稳定的开展业务。</p>
+																</a>
+															</div>
+														</div>
+													</div>
+
+
+
+													<!-- 云安全-->
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-vps tpl1 product-bg-common clearfix" sidebar-type="cloudsecurity">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n28"></span>中国网盟云计算SSL								
+																	<p class="fsize12 g777 mtop6">开启HTTPS绿色加密通道，确保用户网站/应用数据在传输过程中不被窃取或篡改。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n26"></span>中国网盟云计算CDN								
+																	<p class="fsize12 g777 mtop6">遍布全球各地的CDN节点，为用户提供低成本、高可用的内容分发服务。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n25"></span>中国网盟云计算WAF								
+																	<p class="fsize12 g777 mtop6">提供专业的网站防护服务、页面篡改防护服务、防黑客和内容过滤服务。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																	<span class="nav-icon icon-n27"></span>中国网盟云计算抗D								
+																	<p class="fsize12 g777 mtop6">有效防御任何类型的DDOS攻击、CC攻击，专注于特大流量DDOS攻击防御服务。</p>
+																</a>
+															</div>
+															
+															
+														</div>
+														
+													</div>
+													<!-- 方案云产品 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-kystorage tpl1 product-bg-common clearfix" sidebar-type="programcloudproducts">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n10"></span>中国网盟云计算负载均衡器
+																<p class="fsize12 g777 mtop6">对多台云服务器进行流量分发的负载均衡服务,保证服务器的不间断运行。</p>
+																</a>
+															</div>
+															
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n11"></span>中国网盟云计算带宽共享器
+																<p class="fsize12 g777 mtop6">多IP之间共享带宽，带宽资源弹性分配，有效降低带宽成本。</p>
+																</a>
+															</div>
+															
+															
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n1707"></span>混合云高速通道
+																<p class="fsize12 g777 mtop6">支持用户专线接入公有云的一种服务，应用于跨地域办公网或本地数据和云上网络互通的混合云场景。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n32"></span>中国网盟云计算备份
+																<p class="fsize12 g777 mtop6">提供数据库、文件、操作系统、虚拟机等的数据备份服务。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop8">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n36"></span>企业云盘
+																<p class="fsize12 g777 mtop6">提供高效、简单、快速、安全、专业的文档协同服务。</p>
+																</a>
+															</div>
+														</div>
+													</div>
+													<!-- 一站式方案 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-fuzai tpl1 product-bg-common clearfix" sidebar-type="onestopsolution">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+														<div class="menu-dropdown-down-item mtop26">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n23"></span>通用一站式方案
+																<p class="fsize12 g777 mtop6">提供环境搭建，网站部署，安全防护，加速等web网站一站式服务。</p>
+																</a>
+															</div>
+															
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n30"></span>私有云服务
+																<p class="fsize12 g777 mtop6">让云平台在企业内部快速落地，提升IT系统价值。</p>
+																</a>
+																
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n31"></span>多云服务
+																<p class="fsize12 g777 mtop6">专为多云架构构建的灾难恢复和业务连续性。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n33"></span>中国网盟云计算超融合一体机
+																<p class="fsize12 g777 mtop6">让企业快速构建面向下一代数据中心基础架构的超融合集群。</p>
+																</a>
+															</div>
+														</div>
+													</div>
+
+													<!-- 云镜像 -->
+													
+													<!-- 热门应用 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-rmyy tpl1 product-bg-common clearfix" sidebar-type="popularapplications">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															
+															
+															<div class="menu-dropdown-down-item mtop8">
+															    <a href="#" class="nav-link">
+															        <span class="nav-icon icon-n12"></span>中国网盟云计算小助手
+															        <p class="fsize12 g777 mtop6">集成管理小助手，一键部署各种系统环境。</p>
+															    </a>
+															    <p class="mtop8"><span class="fsize12 g777">支持Windows系统，</span><a href="#">
+																	查看详情
+																</a></p>
+																<p class="mtop8"><span class="fsize12 g777">支持Windows/Linux，</span><a href="#">
+																	查看详情
+																</a></p>
+															</div>
+															
+															
+															
+														</div>
+													</div>
+													<!-- 企业应用服务-->
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-icp tpl1 product-bg-common clearfix" sidebar-type="icp">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n39"></span>互联网信息经营许可证（ICP）
+																<p class="fsize12 g777 mtop6">互联网信息经营许可证：中华人民共和国电信与信息服务业务经营许可证（简称ICP许可证），即向广大用户综合提供互联网信息业务和增值业务的电信运营商。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n40"></span>知识产权
+																<p class="fsize12 g777 mtop6">商标注册/软件著作/正版图片，开启一站式专业服务，利用大数据分析和先进搜索技术快速甄别类似商标注册信息及状态，帮助提高通过率，全面支持商标申请线上提交、线上跟进，高稳定对接。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n41"></span>公司注册
+																<p class="fsize12 g777 mtop6">公司注册、云上公司、个体工商户，支持远程异地注册，在线办理，企业名称免费查询，一对一免费咨询，政府提供注册地址，享受园区优惠政策。</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n42"></span>代理记账
+																<p class="fsize12 g777 mtop6">资深会计团队多对一专业服务，人工智能分析财务报表，账务随时在线可查，告别糊涂账！无任何隐形消费，10分钟高效响应，数据信息安全。</p>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div style="display: none;" class="item-sub item-sub0 nav-bg-kydomain tpl1 product-bg-common clearfix" sidebar-type="domain">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n13"></span>域名注册
+																<p class="fsize12 g777 mtop6">国内外双注册商，任君选择</p>
+																</a>
+															</div>
+															<div class="menu-dropdown-down-item">
+																<a href="#" target="_blank">.com 55元/年</a>
+																<a href="#" target="_blank" class="mleft20">.cn 39元/年</a>
+																<a href="#" target="_blank" class="mleft20">.top 15元/年</a>
+															</div>
+															<div class="menu-dropdown-down-item mtop26">
+																<a href="#" target="_blank" class="nav-link">
+																<span class="nav-icon icon-n14"></span>虚拟主机
+																<p class="fsize12 g777 mtop6">多线骨干网接入，站库分离更快速，免费赠送云数据库。</p>
+																</a>
+																
+															</div>
+															
+															<div class="menu-dropdown-down-item">
+																<a href="#" target="_blank">云虚拟主机</a>
+																<a href="#" target="_blank" class="mleft20">云空间</a>
+															</div>
+														</div>
+													</div>
+													<!-- 云视频 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-video tpl1 product-bg-common clearfix" sidebar-type="video">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n16"></span>中国网盟云计算点播
+																<p class="fsize12 g777 mtop6">满足各行业对稳定、安全、快速的视频播放需求，灵活上传、便捷转码，发布网络覆盖全球，一站式云点播服务。
+																</p>
+																</a>
+																	
+															</div>
+														</div>
+														<div class="menu-dropdown-bd menu-dropdown-split-line mtop26">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n17"></span>中国网盟云计算直播
+																<p class="fsize12 g777 mtop6">提供 RTMP、HLS、HDL 直播支持、配套的数据处理服务、端到端 SDK 支持、APM 数据服务稳定流畅、高并发的一站式云直播服务。
+																</p>
+																</a>
+																	
+															</div>
+														</div>
+													</div>
+													<!-- 方案套件 -->
+													<div style="display: none;" class="item-sub item-sub0 nav-video tpl1 product-bg-common clearfix" sidebar-type="soution">
+														<div class="menu-dropdown-bd menu-dropdown-split-line">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n16"></span>一站式方案
+																<p class="fsize12 g777 mtop6">满足各行业对稳定、安全、快速的视频播放需求，灵活上传、便捷转码，发布网络覆盖全球，一站式云点播服务。
+																</p>
+																</a>
+																	
+															</div>
+														</div>
+														<div class="menu-dropdown-bd menu-dropdown-split-line mtop26">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n17"></span>混合云应用
+																<p class="fsize12 g777 mtop6">提供 RTMP、HLS、HDL 直播支持、配套的数据处理服务、端到端 SDK 支持、APM 数据服务稳定流畅、高并发的一站式云直播服务。
+																</p>
+																</a>
+																	
+															</div>
+														</div>
+														<div class="menu-dropdown-bd menu-dropdown-split-line mtop26">
+															<div class="menu-dropdown-down-item">
+																<a href="#" class="nav-link">
+																<span class="nav-icon icon-n17"></span>托管私有云
+																<p class="fsize12 g777 mtop6">提供 RTMP、HLS、HDL 直播支持、配套的数据处理服务、端到端 SDK 支持、APM 数据服务稳定流畅、高并发的一站式云直播服务。
+																</p>
+																</a>
+																	
+															</div>
+														</div>
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<!--解决方案-->
+									<li class="top-menu-item" has-dropdown="true" menu-type="solution">
+										<span class="menu-hd">行业方案</span>
+									<div class="menu-dropdown solutions solution-bg" style="width:190px">
+											<div class="menu-dropdown-inner module-padding solution-inner clearfix">
+												<div class="module-wrap pull-left" style="width:158px;margin-right:0">
+													<div class="module-hd">行业解决方案</div>
+													<div class="module-bd">
+														<a href="#">等保认证合规方案</a>
+														<a href="#" target="_blank">智慧景区解决方案</a>
+														<a href="#">在线教育解决方案</a>
+														<a href="#">互联网金融解决方案</a>
+														<a href="#">零售云解决方案</a>
+														
+														<a href="#" target="_blank">跨境电商解决方案</a>
+														<a href="#">供应链解决方案</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!--合作生态-->
+									<li class="top-menu-item" has-dropdown="true" menu-type="dev">
+										<span class="menu-hd">合作生态</span>
+										<div class="menu-dropdown solutions dev-bg" style="width:350px">
+											<div class="menu-dropdown-inner module-padding dev-inner clearfix">								
+												<div class="module-wrap">
+													<div class="module-hd">合作</div>
+													<div class="module-bd">
+														<a href="#">合作专区</a>
+														<a href="#">代理级别与流程</a>
+														<a href="#">代理商查询</a>
+														<a href="#">推广返佣</a>
+													</div>
+												</div>
+												<div class="module-wrap">
+													<div class="module-hd">
+														扶持
+													</div>
+													<div class="module-bd">
+														<a href="#">创业扶持</a>
+														<a href="#">建站扶持</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!--服务支持-->
+									<li class="top-menu-item" has-dropdown="true" menu-type="fuwu">
+										<span class="menu-hd">服务支持</span>
+										<div class="menu-dropdown solutions dev-bg" style="width:350px">
+											<div class="menu-dropdown-inner module-padding dev-inner clearfix">
+												<div class="module-wrap">
+													<div class="module-hd">服务</div>
+													<div class="module-bd">
+														<a href="#">3天无条件退款</a>
+														<a href="#">百倍故障赔偿</a>
+														<a href="#">中国网盟云代维服务</a>
+														<a href="#">免费体验中心</a>
+													</div>
+												</div>
+												<div class="module-wrap">
+													<div class="module-hd">支持</div>
+													<div class="module-bd">
+														<a href="#" target="_blank">备案中心</a>
+														<a href="#" target="_blank">帮助中心</a>
+														<a href="#" target="_blank">技术支持</a>
+														<a href="#" target="_blank">中国网盟云计算PLUS</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="top-menu-item" has-dropdown="false" menu-type="">
+										<a class="menu-hd top-menu-item-link" href="#" target="_blank">帮助中心</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="item-2">
-				<div class="item-img">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABfCAYAAAAXtMJAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkI3MEUxOTk1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkI3MEUxOTg1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0MmFhYTVjLWRmNTktMjM0MC05MzAzLTZjNDdhNWMxMTYzYiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7ANWmvAAACQUlEQVR42uyYwSsEURzHZxnisJKEUpILRSmKlIMc3SgH/wAHJHJwIgdXknJhT1rlRLn4K5yIPcgBe9IeVpGS9X31DtuUHKyZZ+bzqW+vdtrZfb/PzO/Nm1SpVPIgOlIIQAACAAEIAAQgABCAAEAAAgABCAAEIAAQgABAAAIAAQgABCAAEIAAQAACAAEIAAQgABCAAEAAAgABCAAEIAAQgABAAAIAAQgABCAAYiyg6XLpN19vVCaUs8LA7muU86hK6IX3pmSVe4lcQED4vCt3SouyJwk5ZT6RLUgTH9MQ5p8wv5VSTpTWwLErZVdt6TBJAlxchK6VbeVCMvK0oPDpVTLmbmANiIZbZUaZ/esf8h2Y7LDyGeLvfdoL71xpCxy7UbbUdrLsA/52H+DZp6Cusp6/o8Jnwp6H7yWTOlv8vL3i96P6I/4/udoHzaZJhSpU6JS1ypRpQzrnR5Rz8x0v/LiGdWVEaa7gqYsq/KkLc/QdLfyohhVl0n6UV8Fe4tgLnVqEVfghDavKdODQg9Jnn2BSYdZH4ouxvwNU+H4NG2VXfJB25bHsNUJoApR0rAWo+Md20/PThjHtxRAXdsIHdsv/4SUQZ9YA3QkdGhYV81q4PnD4WVmOogVpDThK1E5YIky/X1PmlBr7cU6F6KnkTljnowV9U5gnxdwJnbY9GbpV8GrWgHBFmGd/8zbSvBreVBpYAwABCAAEIAAQgABAAAIAAQgABCAAEIAAQAACAAEIAAQgABCAAEAAAgABrvMlwAD+L2QbxOQxQwAAAABJRU5ErkJggg==" alt="">
-				</div>
-			</div>
-			<div class="item-3">
-				<div class="item-img">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAA8CAYAAAAgwDn8AAAEnElEQVRogd2aaYhVZRjHf94Zk0orMbDIoIFW/aAFmUmitogtH4zKCAzUgiyxxcoiFYQ2tGkhpahoN6xUaPlgEzmKRhRRaSioZBtqzpiao2M51dx4Lv8bd67nnPes957xB4dZzjnv+zznfd7nPMvpw9Z7yYjRwHpgJ3AZ8GsW0xQyEv5G4CONfyawCrg0i4nSVuAUoBlYDgyq+P9QoAW4D+iX5oRpKXAy8CDwBXC/zzUDgGeAtcC0tOZuTHj/BcBNwC3A+SHvGaVjOrBCq7UrrgBRN3Ff4BLgCuBiYDxwQtzJxW9AK7AB+ATYFOVmU+AkYDDQpmUdqL9NsLOAIbJn+3keMCyhwEEcAb4FtgO7gd/lvez4G2gH/gCKwGl2nZnQi8D1wD6ZVH/gxAyFDKKfvJWfxzqko6gH/bgJ3AQcD5xRJ6Gj0F9HmaaCbLC30lko7YPeS5/erkDJ63TnQI7YZBUL1YxjwoSKOZAjNnk2oW3An66L8qjARmASMFw/DwRdnCcFDgJPKVL9EPgL+FThtx/FpOF0WrQoj9hcNZ6F6RMC5uiu9wp0AvOBiR7CzwLeVpzmR0NjHd3o1xLyK49zc4CFYQap1wpYCD/WR/h5YYWnDgqYW7wHuMvHRT4MPBplwFqa0E/ADHkWL2YCT0YdtLFGb+J1wFQp4YVVKZbEGThKLPQPsCfGHEvlZfyEnwy8EmPcEmHDaUuqr1JC/1yE8RcBtwaEBGPlKhsijNmDMJu4VcKv1QpYde0OYL/jvkeAhwLOWy7+HnBcTNlLuBRo1fJvq/r/y8A4nffiAceGtJfTuyrfJMKlwB7VY7z4HrgGeLbiXLdeTk87xl0MjEwqPPCvKxa6WfUiK991eZy3QtRs4BtgCvAWsMwx5t3AbQmE7kGYYO5O4HS5Qb/Q9h0dLkaHWJ0olKoSYTbyJNUthySYzEqVb6RQUK6kIUpVwuL01cBFMSd7Ajgn5r1+7CwEbFIvzgU+A66OONGVioHS5lBBmU8UBipjmhryHvPzL2QgvNFVULk6KtYneF1dGRfzMzCdMgdNgZ8TDGChwmMB55sCWk5p0F4IERK4mKtgzKt51+xICZNgUXRbQZ2QpNwOrAROrRjHvNV1GQmPHnxJgS8TmlGZa4GPK+Kb5qSBmoONZRM6EOL1H5ZRSl6WqgGYJeYJ/+9Sng18V9W+yTN7lZu0lcOIH4BXe4nw6L1iXdUecdAifZiRd6yn93xZxkoFdqkmk3cWqH98lALGmzryygfVBYBqBYqqz7TkUIEtysV7lIG8coFOZWJraiebky3KSdqrL/RLZuzdcENOlPhc4fhWr5NB2dh+ab0qO9mcLNcb3tc7utLJDimxsMb95MOKYidLBl/C5MNdqhpbCeXHbOUuYSYzRl93OYlSXm/RR06vZbQau1VyGa9vhkIRtT+wTzWdCYoG08Aexvt6OItVRA5N3AbHan16NiOhWa2TuZjb3hFngCQdGqvKvQRcqD2yPeR9Rdm51VzH6UvH2KTRYuqQlxqhKt4Gnz3SoX10uZ66/Z64uZLFp8f2UCyxsT6YmZl5MUs+bLV+SXUm4D/M+OwOq6/SzQAAAABJRU5ErkJggg==" alt="">
-				</div>
-				<div class="img-desc">
-					<div class="run-localtion">云节点</div>
-					<div class="run-status">云节点工作中</div>
-				</div>
-			</div>
-			<div class="item-4">
-				<div class="item-img">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAABfCAYAAACa2YUUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkMzMzRBMEM1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkMzMzRBMEI1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0MmFhYTVjLWRmNTktMjM0MC05MzAzLTZjNDdhNWMxMTYzYiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4gcvwXAAADdUlEQVR42uzaT0hUQRwH8NlFzdrWf2VaQqEHITDKXKyoMAIjqktCQqewg3uwiKLIU2HUoYOVpYFbrV7sUIFSIP0jIYgOGhEa/QEt6A+WyVq2Lbau23fsbTzfvj/z/hwW+g38mGWZN/vZmTe/ebPqisfjLJWLm6V4ISABCUhAAhKQgAQkIAEJSEACEpCABCQgAQlIQAISkIAEJGCKljSRRp93bMxd1vskpHjP7mdXIEaU/ZoeQUB4R8Oo6x0cGN7nAx78y1sGSjjeEe+k3SGkvM8KI6RbEJcodpFqfeoiXWp/jtXAyYsfEXAAJy/PENXKe9LqKm5H1DuImwWqLRhVIBrOfhtEyAGkCC6Az/QLT7GJqTaabsPrf23exiaqd77Fy4s+n68tCdjf378FtabS+/Rxqfd+TzOLxbxababK1jaP1+67Y/Y6CSd/awjRAuhVOdDwnxbSx76wRR2tzP3zh2ab77X7WbhstXB7FZy8vEScQ9wVAppB/i4otIuTl1vCQFHkzMIsJ3CvEU2Ie3wvXsf7FQFG8wtYZH3VSs+j3lY2E8tSzfw6uFj+0m7gTkvZg9+zhYomrxBncA92Ca1im6s7KZVIK/5vH6dahlGVyO6584BdM5VmHEQqcZmoIvylNGKXbT0PDgwMVCDyVLamRoHLH8pxUslA1CBW6OEMRxCorahOIDYgFqOzSYsjmJTMsXNYf2AFbBOqI4jdCY8NXGJbZBYeMOaOIGCVqI4i9ijafUCU8dW+JHChPO3T+9ssHs8x+2Ez3pxDo8eaOsz40iQY3wJOykZMWYoQHzO+jrrdoW8LgHNZOgBNTrR4Bp+fDa8qjwoDgbuOF3uN+kaS9uZ1tjF3eFI3CYfX+HSTefbNzkzmcmcmtkWRU90VvkEjpu3sIIkdgifz8boDszuKVsm+EWSeoRfm7kGM5HJUBxENiPlzcMFLcYyc5rRGi0v7xuoagvL3MJXFWd1dx13TUY/WdZHKqmBoV02fni8pzQBaJOU3P3DpRiOnTMIWHlb9SDkB03nwXePh7RlvBntcU5F5FnGOIK0emkRxtpFWD01mcP9ObAZnHPG92ODQpHnAsYHUnGLNEdRAWsXpIXUXie4UK5B2cWpIXZzw8yAWTQk6GnH4161co1+2bD2w0g+YBCQgAQlIQAISkIAEJCAB/wfgHwEGAExAnciFI4wkAAAAAElFTkSuQmCC" alt="">
-				</div>
-			</div>
-			<div class="item-5">
-				<div class="item-img">
-					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABfCAYAAABV97HXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkM3NDI0OEM1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkMzMzRBMTM1MkRCMTFFNkFCRjBCNUYyNDREMUUwNkIiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0MmFhYTVjLWRmNTktMjM0MC05MzAzLTZjNDdhNWMxMTYzYiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzRkZTM1My01Y2EzLTM3NGMtOWYwMy00OWFjNjc2ZWQ0ZTQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6aJx6tAAACPklEQVR42uycMUibQRiGozSW1NQWRRGhQ4cOpYMWnIxFsJMpuElB6Vhw6NBZujt3cKt0skNRl6CjLaV1KE6Ci1uHZBHE2moQwfge/bUh9/9eimI13/PCM5gvDnm4/+67O5KmSqWSIn6aEIMYxCAGMf9BTHFkADMxaRZlNHgpOzGHePBy2PyP/1AUBbFu4VGqN9PigRgVvWJCNOz8dKPO970TUzWvfRAHYt7qiNkXrxNqC+KrVTGfxd4Z9Y9WxWwG6iWrYrKBesaqmFyg3m9VzEPxNKHWIl5Y7mPei86EVandch9zL+p2XZO3Ju6LSTFovcFz6RZvLe2uSYKYNjR4aXOP0pK4y/HDadJiJ3i0WcrnrvWn7Fn+xhzD5IsYxCDmusTdK81FRwtH6DgdLL9dHzOOi3g7u2jwsssccwG7a5fvYkN0iWeI+ZNXYqbq72GxKO5YXq6na6S4rIi85T5mW7xJqK2KZativgR6nIJVMT8C9S2rYkKT6y2rYoYC9SdWxbirkrGEWkejbinqXa5nRV/MI+Qm3lbLDd7tqOt1vcwn8Ui8jEZTwx47/ExxhRK7iWQjGTPFOClZPHjJujnmubiZ4gSvekE64MLtnMu1yWFDEIOYC2nwTnoZVqW/g+XILddrUcvPF7qiwSJ+OTGPcRE/bLhwS9grEVYlxCAGMYhBDGIQgxjEIIYgBjGIQQxiEIMYxCAGMYghiEEMYhBzaWLSaPCSdmIyePCS4RegE4IYxCAGMYhBDGKufI4FGADhPX0XHqABXwAAAABJRU5ErkJggg==" alt="">
-				</div>
-				<div class="img-desc">
-					<div class="run-localtion">源服务器</div>
-					<div class="run-status">Error</div>
+				<div class="gt-nav-login">
+					<div class="login-op pull-left">
+						<div class="state-log-out">
+							<a href="#" class="text btn-sign-up">登录</a></span>
+							
+									<a href="#" class="text btn-sign-up">
+									<span>注册</span>
+									</a>
+								
+							
+						</div>
+						
+						
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="img-aside-rt"></div>
+		
 	</div>
-	<div class="err-text">
-		<div class="text-aside-lt"></div>
-		<div class="err-text-container">
-			<span id="err_code">502</span>
-			<span id="status_text">网关错误</span>
+<script src="./cncc-cloud_files/adv.js.下载"></script><script src="./cncc-cloud_files/jquery.placeholder.js.下载"></script>
+<script type="text/javascript">
+	$(function(){$('input,textarea').placeholder();});
+</script>
+
+<script type="text/javascript">
+	function tomemberlogin(){
+
+		var service_url=window.location.href;
+		if(service_url.indexOf('kyunmember/tologin')>0){
+			window.location.href=service_url;
+		}else{
+			service =encodeURIComponent(service_url);
+			window.location.href='https://www.kuaiyun.cn:443/tomember?url='+service;
+		}
+	}
+	setTimeout("checkCartNumber()",200);
+	function checkCartNumber(){
+		jQuery.support.cors = true;
+		$.ajax({
+			type: "GET",
+			async:false,
+			url: 'https://www.kuaiyun.cn:443/shopcartNumber?v='+Math.random(),
+			dataType:'json',
+			success: function(data){
+				var num =0;
+				if(data!=null&&data.length>500){
+				}else{
+					num = data; 
+				}
+				$("#shopcartNumber").html(num);
+			},
+			error:  function(e) {
+				$("#shopcartNumber").html(0);
+            }
+		});
+	}
+	$("#moverin,#h_username,#h_logout_btn").mouseenter(function(){
+		$("#h_logout_btn").show();
+	});
+	$("#h_logout_btn,#h_username").mouseleave(function(){
+		$("#h_logout_btn").hide();
+	});
+	
+	///搜索产品
+	var navtrigger=1;//记录触发搜索次数
+	var navindexhtml;
+		 function navProductChange() {//根据地区及所选产品查询商务,意向产品，地区，意向产品
+		     var url = "getNavProductsList.action";
+		     var params = {};
+		         $.ajax({
+		            url:url,
+		            type:"POST",
+		            data:params,
+		            dataType:"json",
+		            async: false,
+		            success:function(data){
+		              console.log(data);	
+		              if (data != null && $.trim(data) != "") {
+		            	var dataList = eval(data);
+		            	$("#navproductul").empty();
+		    			for(var i=0; i < dataList.length; i++){
+		    			   var item= dataList[i];
+		    			   var itemStr = JSON.stringify(item);
+		    			   var itemData = eval("(" +itemStr + ")");
+		    			  // $("#navproductul").append("<li onclick='choosesale("+itemData.account_id+",\""+itemData.name+"\")' selectid='"+itemData.account_id+"' class=l"+i+">"+ itemData.name +"</li>");
+			    			var navhtml="";
+			    			navhtml+="<li>" ;
+			    			if(itemData.sm!=null && itemData.sm!='null' && itemData.sm!=''){
+			    				navhtml+="<a href=\""+itemData.sm+"\"  onclick=\"document.getElementById('navsearchinput').focus();\">";
+			    			}else{
+			    				navhtml+="<a href='#' target='_self'>";
+			    			}
+			    			navhtml+="<p class='fsize14 searchmc'>"+itemData.mc+"</p>";
+			    			if(itemData.remark!=null && itemData.remark!='null' && itemData.remark!=''){
+			    				navhtml+="<p class='fsize12 g97a'>"+itemData.remark+"</p>";
+			    			}else{
+			    				navhtml+="<p class='fsize12 g97a'></p>";
+			    			}
+			    			navhtml+="</a></li>"
+			    			$("#navproductul").append(navhtml);
+			    			console.log(navhtml);
+		    			}
+		    			navindexhtml=$("#navproductul").find("li");
+		              } else {
+		            	  $("#navproductul").empty();
+		              }
+		            }
+		         });
+		}
+	
+	
+	
+	function naventeranwer(par){//
+		hideNavLi();
+		 if(navindexhtml && par){
+		   if($("#navproductul li").length!=0){
+			   $("#navproductul").parent().show();
+			}
+		} 
+		navtrigger=1
+	}
+	
+	function searchnavproduct(par){
+		//indexhtml=$("#navproductul").find("li");
+		if(navtrigger==1){
+			navProductChange();
+			hideNavLi();
+			navtrigger=2;
+		}
+		if(navindexhtml==null){
+			return;
+		}
+		if(par==null || par==""){
+			$("#navproductul").html(navindexhtml);
+			hideNavLi();
+			return;
+		}
+		
+		var ulli=navindexhtml;
+		var searchvalue=par;
+		if(searchvalue!=null && searchvalue!=''){
+			if(ulli.length>0){
+				$("#navproductul").empty();
+					var matchcount=0;
+					for(var i=0;i<ulli.length;i++){
+						var lispan=ulli.eq(i).find(".searchmc").html()+"";
+						if(lispan.indexOf(searchvalue)!=-1 || lispan.toUpperCase().indexOf(searchvalue.toUpperCase())!=-1){
+							$("#navproductul").append(ulli.eq(i));
+							matchcount+=1;
+							showNavLi();//
+						}
+					}
+					if(matchcount && matchcount>0){
+						$("#navproductul li").find("p:eq(0)").addClass("fweight");
+						$("#navproductul").find("li:eq(0)").addClass("current");
+					}else{
+						showNavLi();//
+						$("#navproductul").empty().append("<li>没有找到结果，请重新输入</li>");
+					}
+			}
+		}
+		
+	}
+	function searchnavproductonblur() {
+		 setTimeout(function(){
+	            // input框失去焦点，隐藏下拉框
+	            hideNavLi();
+	        }, 300);
+		//hideNavLi();
+	}
+
+	function hideNavLi(){ 
+	     $("#navproductul").parent().hide(); 
+	}
+	function showNavLi(){ 
+	     $("#navproductul").parent().show(); 
+	} 
+</script>
+	<!-- 此处引用线上公共头部导航 end--> 
+	<!--头部导航end-->
+	<!--首页焦点图start-->
+	<div class="gabg3">
+		<div class="ky-container ">
+			<div class="product-f40 ">
+				<p class="f40-kystorage2 gagfff">私有云解决方案</p>
+				<div class="product-detail gag97a0b4">
+					中国网盟云计算私有云致力于打造专业、便捷的云平台，通过对企业的IT基础设施进行融合重构，实现企业数据中心资源虚拟化以及全面的运维监控和运营管理，让企业数据中心的资源使用变得简单、弹性、高效和安全。将企业传统数据中心转变为云服务中心，为各类应用部署提供随需应变的基础设施服务（IaaS）。
+				</div>
+				<div class="product-link m-top20">
+				</div>
+			</div>
 		</div>
-		<div class="text-aside-rt"></div>
 	</div>
-	<div class="err-ip-addr">
-	<!--	<span>您的IP: <span id="ip_addr">/*用户IP*/</span></span>-->
-	<!--	<span>云节点: <span id="node_addr">/*节点IP*/</span></span>-->
+	<!--首页焦点图end-->
+	<div class="ky-container">
+		<div class="text-center toptxt">
+			<h4 class="h432">传统IT架构VS私有云架构</h4>
+		</div>
+		<div class="privateimg"></div>
+		
 	</div>
-	<div class="err-request-id">
-	<!--	<span>RequestID: <span id="request_id">15576ad518c3745611db118b8e97a833</span></span>-->
+	<!-- 私有云解决方案优势 start -->
+	<div class="bg-fa p-bottom100">
+		<div class="ky-container">
+			<div class="text-center toptxt ptop80">
+				<h4 class="h432">私有云解决方案优势</h4>
+			</div>
+			<ul class="ky-pcloudadv clearfix">
+				<li>
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg5.png" alt="">自主知识产权，支持用户定制
+					</div>
+					<div class="ky-padvlisttext">完全独立自主研发的云平台，经过公有云大规模用户验证，在生产环境稳定运行；支持用户自定义功能开发，快速响应用户需求。</div>
+				</li>
+				<li>
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg6.png" alt="">自动化部署，云平台高可用
+					</div>
+					<div class="ky-padvlisttext">单机半小时内完成部署，全过程对用户透明，无须额外干预；云平台管控面和数据面分离，无单点故障。任何一个管理节点失联，秒级切换至备用管理节点，云平台业务不受影响。</div>
+				</li>
+				<li class="m-right0">
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg7.png" alt="">全栈一体化设计
+					</div>
+					<div class="ky-padvlisttext">计算、存储、网络、监控、运维一体化设计、交付与升级，云服务间充分协同，为用户提供一体化全栈云体验。</div>
+				</li>
+				<li>
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg8.png" alt="">平滑无感升级
+					</div>
+					<div class="ky-padvlisttext">支持用户自助进行版本升级，升级过程无需停止云主机，保障业务不中断，实现云平台服务平滑无感知，同时支持跨版本升级。</div>
+				</li>
+				<li>
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg9.png" alt="">硬件无捆绑
+					</div>
+					<div class="ky-padvlisttext">支持利旧无硬件绑定，任何x86架构，只要支持CPU硬件虚拟化的设备，即可部署中国网盟云计算私有云云平台。</div>
+				</li>
+				<li class="m-right0">
+					<div class="ky-padvlisttit clearfix">
+						<img src="./cncc-cloud_files/20191223bchimg10.png" alt="">轻运维管理
+					</div>
+					<div class="ky-padvlisttext">实现硬件、分布式存储、集群服务到虚拟资源的全面监控和告警服务，并为用户提供完备的日志管理与告警自动化处理能力，实现云服务故障自愈。</div>
+				</li>
+			</ul>
+		</div>
 	</div>
-</div>
+	<!-- 私有云解决方案优势 end -->
+	<!-- 私有云平台基础服务 start -->
+	<div class="mbottom100">
+		<div class="ky-container pbottom30">
+			<div class="text-center pbottom40 ptop80">
+				<h4 class="h432">私有云平台基础服务</h4>
+			</div>
+			<div class="tabon3 clearfix">
+				<ul>
+					<li id="tab3_1" class="nav_on6" onClick="service(1)">
+						<a href="#">
+							计算服务
+						</a>
+					</li>
+					<li id="tab3_2" onClick="service(2)">
+						<a href="#">
+							存储服务
+						</a>
+					</li>
+					<li id="tab3_3" onClick="service(3)">
+						<a href="#">
+							网络服务
+						</a>
+					</li>
+					<li id="tab3_4" onClick="service(4)">
+						运维与升级服务
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			<div class="tabboxkyn fsize14">
+				<div id="tab3_01" class="dis clearfix">
+					<ul class="serverul clearfix">
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg1"></div>
+									<h5 class="h5-txt2">计算资源统一管理</h5>
+									<p>同时提供虚拟机、物理机资源，通过统一自服务界面管理</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg2"></div>
+									<h5 class="h5-txt2">秒级获取云资源</h5>
+									<p>秒级创建，无需等待，海量计算资源瞬间获得，安全灵活</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright28">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg3"></div>
+									<h5 class="h5-txt2">主机高可用</h5>
+									<p>保证业务在硬件、网络故障场景下的业务连续性，保证稳定可靠的运行</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg4"></div>
+									<h5 class="h5-txt2">自动弹性伸缩</h5>
+									<p>支持云主机自动弹性扩展，可以根据负载的增减动态调整计算资源的规模</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="tab3_02" class="undis clearfix">
+					<ul class="serverul clearfix">
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg5"></div>
+									<h5 class="h5-txt2">分布式统一存储</h5>
+									<p>分布式Ceph存储冗余架构，同时为上层应用提供多类型云存储服务，包括块存储、对象存储和文件共享存储</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg6"></div>
+									<h5 class="h5-txt2">保证数据安全</h5>
+									<p>
+										分布式存储系统采用多副本技术，以及副本可自选配置策略，可保证数据同时存在于多台服务器，多个机架或多个数据中心之中，最大限度的提高数据容灾能力
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright28">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg7"></div>
+									<h5 class="h5-txt2">备份与恢复</h5>
+									<p>块存储支持快照和镜像，数据可从任意的快照或镜像备份点恢复</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg8"></div>
+									<h5 class="h5-txt2">高性能</h5>
+									<p>提供稳定的物理机性能的块存储服务，支持企业级数据库应用</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="tab3_03" class="undis clearfix">
+					<ul class="serverul clearfix">
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg9"></div>
+									<h5 class="h5-txt2">私网隔离</h5>
+									<p>
+										基于SDN技术，VXLAN网络隔离，名下业务内网互通，用户之间外网隔离，保障网络安全，天然免疫ARP攻击
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg10"></div>
+									<h5 class="h5-txt2">支持三层路由高可用</h5>
+									<p>
+										应用VRRP路由高可用协议，消除网络节点单点故障，实现故障点网络切换时上层业务无感知
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg11"></div>
+									<h5 class="h5-txt2">多网络接入</h5>
+									<p>支持多个外部网络接入，多条线路满足对业务可访问性的需求</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div id="tab3_04" class="undis clearfix">
+					<ul class="serverul clearfix">
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg12"></div>
+									<h5 class="h5-txt2">自动化运维</h5>
+									<p>
+										自动扫描各虚机和物理机状态，多维度资源监控和网络拓扑和流量监测、预警信息实时推送，IT系统运维轻松完成
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright26">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg13"></div>
+									<h5 class="h5-txt2">监控告警</h5>
+									<p>
+										全面监控云平台所有服务，云主机、存储、网络等，支持自定义告警策略设置
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first mright28">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg14"></div>
+									<h5 class="h5-txt2">日志管理</h5>
+									<p>
+										统一的日志管理，全面收集、管理和分析云平台日志数据
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="serve-vie serve-vie-first">
+							<div class="colmask">
+								<div class="colbg"></div>
+								<div class="content">
+									<div class="col-icon2 serverimg15"></div>
+									<h5 class="h5-txt2">平滑无感升级</h5>
+									<p>实现全系统平滑无感升级，升级过程中保证业务不终端，平台无感知</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 私有云平台基础服务 end -->
+	<!-- 私有云平台增值服务 start -->
+	<div class="bg-fa p-bottom100">
+		<div class="ky-container">
+			<div class="text-center toptxt ptop80">
+				<h4 class="h432">私有云平台增值服务</h4>
+			</div>
+			<ul class="ky-pcloud clearfix">
+				<li>
+					<img class="pull-left" src="./cncc-cloud_files/20191223bchimg1.png" alt="">
+					<div class="fsize22 g333">多云纳管服务</div>
+					<p class="fsize14 m-top20">多云接入，统一云资源管理，一键纳管主流公有云及私有云环境，轻松设置云服务费用预算、实现可视化展示、智能预测分析。</p>
+				</li>
+				<li>
+					<img class="pull-left" src="./cncc-cloud_files/20191223bchimg2.png" alt="">
+					<div class="fsize22 g333">灾备服务</div>
+					<p class="fsize14 m-top20">提供云平台资源和云平台自身数据的备份恢复功能，支持本地，跨地域和混合云多种备份恢复场景，让用户的数据更加安全可靠。</p>
+				</li>
+				<li>
+					<img class="pull-left" src="./cncc-cloud_files/20191223bchimg3.png" alt="">
+					<div class="fsize22 g333">迁移服务</div>
+					<p class="fsize14 m-top20">帮助用户将已有平台上运行的云主机迁移至私有云平台上，支持主流Windows、Linux系统的云主机的迁移。</p>
+				</li>
+				<li>
+					<img class="pull-left" src="./cncc-cloud_files/20191223bchimg4.png" alt="">
+					<div class="fsize22 g333">云安全管理服务</div>
+					<p class="fsize14 m-top20">依托自身安全能力与安全合规生态，为客户提供一站式的安全解决案，帮助客户快速、低成本完成安全整改，轻松满足等保合规要求。</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 私有云平台增值服务 end -->
+	<!-- 典型应用场景 start -->
+	<div class="scenebg">
+		<div class="ky-container scene">
+			<div class="text-center mbottom80">
+				<h4 class="h432 gagfff">典型应用场景</h4>
+			</div>
+			<ul class="win clearfix text-center">
+				<!--数据中心新建/改造 start-->
+				<li class="win-card pull-left mright2" style="width: 258px; height: 262px; top: 0px;">
+					<div class="win-card-title" style="height: 262px;">
+						<div class="win-img-warp">
+							<div class="win-card-img">
+								<img src="./cncc-cloud_files/scenewhite1.png" alt="数据中心新建/改造" class="win-img0">
+								<img src="./cncc-cloud_files/scenewhite1-hover.png" class="win-img1" alt="数据中心新建/改造">
+							</div>
+						</div>
+					</div>
+					<div class="win-card-body">
+						<ul class="win-body-list win-body-list-none text-center" style="display: block;">
+							<li class="fsize16 gagfff">数据中心新建/改造</li>
+						</ul>
+						<div class="win-body-details win-body-details-block" style="display: none;">
+							<h4 class="fsize18 gagfff">数据中心新建/改造</h4>
+							<div class="win-pro-first text-left gagfff fsize16 gagfff">
+								通过中国网盟云计算私有云解决数据中心投入成本高、运维工作量大、扩展性差等问题，保护IT投资，提升管理与运维效率，并用“堆积木”式的x86服务器堆叠实现资源无缝横向扩展。
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--数据中心新建/改造 end-->
+				<!--业务系统新建/改造 start-->
+				<li class="win-card pull-left mright2" style="width: 258px; height: 262px; top: 0px;">
+					<div class="win-card-title  win-card-title-color-even" style="height: 262px;">
+						<div class="win-img-warp">
+							<div class="win-card-img">
+								<img src="./cncc-cloud_files/scenewhite2.png" alt="数据中心新建/改造" class="win-img0">
+								<img src="./cncc-cloud_files/scenewhite2-hover.png" class="win-img1" alt="数据中心新建/改造">
+							</div>
+						</div>
+					</div>
+					<div class="win-card-body">
+						<ul class="win-body-list text-center">
+							<li class="fsize16 gagfff">业务系统新建/改造</li>
+						</ul>
+						<div class="win-body-details">
+							<h4 class="fsize18 gagfff">业务系统新建/改造</h4>
+							<div class="win-pro-first text-left gagfff fsize16 gagfff">
+								不同于传统业务新建改造，存在IT资源投入成本高、业务上线/改造慢和扩展复杂等问题，
+								中国网盟云计算私有云将通过极简的建设模式、资源池化和业务灵活编排等优势，打造更经济、灵活、高效、弹性的IT新架构，帮助业务快速创新和发展。
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--业务系统新建/改造 end-->
+				<!--关键应用上云 start-->
+				<li class="win-card pull-left mright2 win-active" style="width: 420px; height: 358px; top: -36px;">
+					<div class="win-card-title " style="height: 185px;">
+						<div class="win-img-warp">
+							<div class="win-card-img">
+								<img src="./cncc-cloud_files/scenewhite3.png" alt="关键应用上云" class="win-img0">
+								<img src="./cncc-cloud_files/scenewhite3-hover.png" class="win-img1" alt="关键应用上云">
+							</div>
+						</div>
+					</div>
+					<div class="win-card-body">
+						<ul class="win-body-list text-center" style="display: none;">
+							<li class="fsize16 gagfff">关键应用上云</li>
+						</ul>
+						<div class="win-body-details" style="display: block;">
+							<h4 class="fsize18 gagfff">关键应用上云</h4>
+							<div class="win-pro-first text-left gagfff fsize16 gagfff">
+								关键应用对底层基础架构提出了苛刻的要求：高可靠性、低IO延迟、高数据安全级别。
+								中国网盟云计算私有云利用超融合架构提供高性能、高扩展性、高可靠性的新IT基础架构。解决了传统核心业务上线投入成本高，部署运维复杂、改造扩容困难的问题。
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--关键应用上云 end-->
+				<!--容灾备份云 start-->
+				<li class="win-card pull-left" style="width: 258px; height: 262px; top: 0px;">
+					<div class="win-card-title  win-card-title-color-even" style="height: 262px;">
+						<div class="win-img-warp">
+							<div class="win-card-img">
+								<img src="./cncc-cloud_files/scenewhite4.png" alt="容灾备份云" class="win-img0">
+								<img src="./cncc-cloud_files/scenewhite4-hover.png" class="win-img1" alt="容灾备份云">
+							</div>
+						</div>
+					</div>
+					<div class="win-card-body">
+						<ul class="win-body-list text-center">
+							<li class="fsize16 gagfff">容灾备份云</li>
+						</ul>
+						<div class="win-body-details">
+							<h4 class="fsize18 gagfff">容灾备份云</h4>
+							<div class="win-pro-first text-left gagfff fsize16 gagfff">
+								容灾备份能够保障提供正常应用服务的信息系统，是企业正常运转的重要保障，但也是一项投入大、技术难度高、运维复杂的工作，利用自带的存储多副本、自动备份策略和CDP等技术为客户提供了简单易用、高性价比、高可靠性的容灾备份方案。
+							</div>
+						</div>
+					</div>
+				</li>
+				<!--容灾备份云 end-->
+			</ul>
+		</div>
+	</div>
+	<div class="ky-container pbottom30 mbottom100">
+		<div class="text-center pbottom40 ptop10">
+			<h4 class="h432">中国网盟云计算合作伙伴</h4>
+		</div>
+		<ul class="lofdiv clearfix">
+			<li class="mright30">
+				<img src="./cncc-cloud_files/tx.png" class="v-middle" alt="">
+			</li>
+			<li class="mright32">
+				<img src="./cncc-cloud_files/aly.png" class="v-middle" alt="">
+			</li>
+			<li>
+				<img src="./cncc-cloud_files/hwy.png" class="v-middle" alt="">
+			</li>
+			<li>
+				<img src="./cncc-cloud_files/360.png" class="v-middle" alt="">
+			</li>
+		</ul>
+	</div>
+	<!--底部start-->
+	
+
+	<!--底部start-->
+	<div class="NewKYbottom tc-footer" id="h-bottom">
+		<div class="NewKYfw NewKYrow">
+			<div class="ky-container">
+				<div class="wyouitem">
+					<div class="wyouct">
+						<a class="item" target="_blank">
+							<span class="icon icon-1"></span>
+							<span class="term">百倍故障赔偿</span>
+						</a>
+					</div>
+					<div class="wyouct">
+						<a class="item" target="_blank">
+							<span class="icon icon-2"></span>
+							<span class="term">3天无理由退款</span>
+						</a>
+					</div>
+					<div class="wyouct">
+						<a class="item">
+							<span class="icon icon-3"></span>
+							<span class="term">1V1大客户服务</span>
+						</a>
+					</div>
+					<div class="wyouct">
+						<a class="item" target="_blank">
+							<span class="icon icon-4"></span>
+							<span class="term">0元免费备案</span>
+						</a>
+					</div>
+					<div class="wyouct item-last">
+						<a class="item" target="_blank">
+							<span class="icon icon-5"></span>
+							<span class="term">7x24小时服务</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="NewKYrow">
+			<div class="NewKYbottomMain">
+				<ul class="Productitem clearfix">
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+							<li><a href="http://ejiay.cn/">亿佳云</a></li>
+							<li><a href="http://www.007idc.cn/">007IDC</a></li>
+							<li><a href="http://www.lightmoon.cn/">明月云</a></li>
+							<li><a href="http://cloud.xn--6rt33a640f4ok.cn/">荆州强达云</a></li>
+						</ul>
+					</li>
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+							<li><a href="http://yanhaiyun.cn/">岩海云电脑</a></li>
+							<li><a href="http://wy26621029.m.icoc.ws/">好懂百科</a></li>
+							<li><a href="http://www.hackerit.cc/">中国黑盟云安全</a></li>
+							<li><a href="http://api.k46.cc/">四季API</a></li>
+						</ul>
+					</li>
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+					<!--		<li><a href="#" class="nodrop">云咨询</a></li>
+							<li><a href="#" class="nodrop">云迁移</a></li>
+							<li><a href="#" class="nodrop">云优化</a></li>
+							<li><a href="#" class="nodrop">数字化转型顾问</a></li>-->
+						</ul>
+					</li>
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+					<!--		<li><a href="http://support.kuaiyun.cn/" target="_blank">工单</a></li>
+							<li><a href="http://ssp.kuaiyun.cn/" target="_blank">自助管理平台</a></li>
+							<li><a href="https://www.kuaiyun.cn/document/quickstarts">文档中心</a></li>
+							<li><a href="https://www.kuaiyun.cn/sug/tousuIndex">反馈建议</a></li>-->
+						</ul>
+					</li>
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+					<!--		<li><a href="https://www.kuaiyun.cn/zone">合作伙伴</a></li>
+							<li><a href="https://www.kuaiyun.cn/azt/lianmeng20180115">推广返佣</a></li>
+							<li><a href="https://www.kuaiyun.cn/system/kypay">付款方式</a></li>
+							<li><a href="https://www.kuaiyun.cn/concatUs">联系我们</a></li>-->
+						</ul>
+					</li>
+					<li class="Productitem-li">
+						<h3 class="Productitem-title">友情链接</h3>
+						<ul class="Productitem-subcontent">
+					<!--		<li><a href="https://www.kuaiyun.cn/zone">合作伙伴</a></li>
+							<li><a href="https://www.kuaiyun.cn/azt/lianmeng20180115">推广返佣</a></li>
+							<li><a href="https://www.kuaiyun.cn/system/kypay">付款方式</a></li>
+							<li><a href="https://www.kuaiyun.cn/concatUs">联系我们</a></li>-->
+						</ul>
+					</li>
+
+					
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			<div class="BottomAbout clearfix">
+				<div class="About-left pull-left gc7c7c7">
+					<p class="mbottom20">Copyright &copy; 中国网盟云计算 All Rights Reserved.</p>
+						<a href="" class="mright20">
+							<script type="text/javascript" src="./cncc-cloud_files/z_stat.php"></script>
+							<script type="text/javascript">
+								var _py = _py || [];
+								_py.push(['a', 'mk84T..ihZTBJiJYZexU-kWS-2LLX']);
+								_py.push(['domain','stats.ipinyou.com']);
+								_py.push(['e','']);
+								-function(d) {
+								var s = d.createElement('script'),
+								e = d.body.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e),
+								f = 'https:' == location.protocol;
+								s.src = (f ? 'https' : 'http') + '://'+(f?'fm.ipinyou.com':'fm.p0y.cn')+'/j/adv.js';
+								}(document);
+							</script>
+							<noscript><img src="//stats.ipinyou.com/adv.gif?a=mk84T..ihZTBJiJYZexU-kWS-2LLX&e=" style="display:none;"/></noscript>
+							<script>
+								var _hmt = _hmt || [];
+								(function() {
+								  var hm = document.createElement("script");
+								  hm.src = "https://hm.baidu.com/hm.js?5ee4455911654fe78b646ba2f5f9e052";
+								  var s = document.getElementsByTagName("script")[0];
+								  s.parentNode.insertBefore(hm, s);
+								})();
+							</script>
+						</a>
+					</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+<script src="./cncc-cloud_files/server.js.下载"></script>
+<script src="./cncc-cloud_files/privatecloud.js.下载"></script>
 <script>
 window.addEventListener('keydown', function (e) {
     if(e.keyCode == 83 && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)){
@@ -434,5 +1352,5 @@ window.addEventListener('keydown', function (e) {
      });
  
 </script> 
-<body oncontextmenu="return false" ondragstart="return false">
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 </body></html>
