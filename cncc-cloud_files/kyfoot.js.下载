@@ -1,5 +1,0 @@
-$('.NewKYweixin').hover(function () {
-    $('.NewKY-iconhover').fadeIn(0);
-}, function () {
-    $('.NewKY-iconhover').fadeOut(0);
-})
